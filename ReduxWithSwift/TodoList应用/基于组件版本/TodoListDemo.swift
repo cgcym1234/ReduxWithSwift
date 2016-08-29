@@ -19,22 +19,9 @@ class TodoListDemo: UIViewController {
     var todoFooterModel = TodoFooterModel()
     
     func initialization() {
-        func renderTodoList(scrollToBottom: Bool = true) {
-            let filter = todoFooterModel.filter
-            let newModel: [TodoListItemModel]
-            switch filter {
-            case .all:
-                newModel = todoListModel
-            case .completed:
-                newModel = todoListModel.filter { $0.completed }
-            case .active:
-                newModel = todoListModel.flatMap { !$0.completed ? $0 : nil  }
-            }
-            todoList.render(newModel)
-            if scrollToBottom {
-                todoList.scrollToBottomIfNeeded()
-            }
-        }
+        // MARK: - 注意：如果renderTodoList函数放在这里的话，会造成self无法释放
+//        func renderTodoList(scrollToBottom: Bool = true) {}
+        
         todoHeader.addButtonDicTapCallback = { [weak self] text in
             if self == nil {
                 return
@@ -43,7 +30,7 @@ class TodoListDemo: UIViewController {
                 var item = TodoListItemModel(text: text, completed: false)
                 item.id = self!.todoListModel.count
                 self?.todoListModel.append(item)
-                renderTodoList()
+                self?.renderTodoList()
             }
         }
         todoList.todoListDidTapItemCallback = { [weak self] itemId in
@@ -55,14 +42,32 @@ class TodoListDemo: UIViewController {
                         break
                     }
                 }
-                renderTodoList(false)
+                self?.renderTodoList(false)
             }
         }
         todoFooter.buttonDidTapCallback = { [weak self] filter in
             if self != nil {
                 self!.todoFooterModel.filter = filter
-                renderTodoList()
+                self?.renderTodoList()
             }
+        }
+    }
+    
+    // MARK: - 注意：renderTodoList函数最好不要放在initialization里面，因为在函数里面使用的是strong self
+    func renderTodoList(scrollToBottom: Bool = true) {
+        let filter = todoFooterModel.filter
+        let newModel: [TodoListItemModel]
+        switch filter {
+        case .all:
+            newModel = todoListModel
+        case .completed:
+            newModel = todoListModel.filter { $0.completed }
+        case .active:
+            newModel = todoListModel.flatMap { !$0.completed ? $0 : nil  }
+        }
+        todoList.render(newModel)
+        if scrollToBottom {
+            todoList.scrollToBottomIfNeeded()
         }
     }
     
@@ -70,6 +75,10 @@ class TodoListDemo: UIViewController {
         super.viewDidLoad()
         extendedLayoutNone()
         initialization()
+    }
+    
+    deinit {
+        print("TodoListDemo deinit")
     }
 }
 

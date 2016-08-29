@@ -73,4 +73,8 @@ class TodoListReduxDemo: UIViewController, StoreSubscriber {
         extendedLayoutNone()
         initialization()
     }
+    
+    deinit {
+        print("TodoListReduxDemo deinit")
+    }
 }

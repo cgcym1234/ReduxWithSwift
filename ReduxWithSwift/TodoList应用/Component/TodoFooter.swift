@@ -34,6 +34,10 @@ class TodoFooter: YYXibView, YYComponent {
         updateButtonState()
     }
     
+    deinit {
+        print("xx deinit")
+    }
+    
     // MARK: - Public
     
     var model = TodoFooterModel()
