@@ -139,8 +139,8 @@
 		1FC5502E1D5AB06400A7BC3E = {
 			isa = PBXGroup;
 			children = (
-				1FC550391D5AB06500A7BC3E /* ReduxWithSwift */,
 				1FC550381D5AB06400A7BC3E /* Products */,
+				1FC550391D5AB06500A7BC3E /* ReduxWithSwift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,13 +156,13 @@
 			isa = PBXGroup;
 			children = (
 				1FC5503A1D5AB06500A7BC3E /* AppDelegate.swift */,
+				1FC5503E1D5AB06500A7BC3E /* Main.storyboard */,
 				1FC5503C1D5AB06500A7BC3E /* ViewController.swift */,
 				1FC550881D5AB34900A7BC3E /* TodoList应用 */,
-				1FC550A61D5AB37200A7BC3E /* Render */,
-				1FC5503E1D5AB06500A7BC3E /* Main.storyboard */,
+				1FC550A61D5AB37200A7BC3E /* Vender */,
 				1FC550411D5AB06500A7BC3E /* Assets.xcassets */,
-				1FC550431D5AB06500A7BC3E /* LaunchScreen.storyboard */,
 				1FC550461D5AB06500A7BC3E /* Info.plist */,
+				1FC550431D5AB06500A7BC3E /* LaunchScreen.storyboard */,
 			);
 			path = ReduxWithSwift;
 			sourceTree = "<group>";
@@ -366,7 +366,7 @@
 			children = (
 				1FC550891D5AB34900A7BC3E /* Component */,
 				1FC550901D5AB34900A7BC3E /* Redux版本 */,
-				1FC550971D5AB34900A7BC3E /* 基于组件版本 */,
+				1FC550971D5AB34900A7BC3E /* 组件版本 */,
 			);
 			path = "TodoList应用";
 			sourceTree = "<group>";
@@ -411,33 +411,33 @@
 			path = Reducer;
 			sourceTree = "<group>";
 		};
-		1FC550971D5AB34900A7BC3E /* 基于组件版本 */ = {
+		1FC550971D5AB34900A7BC3E /* 组件版本 */ = {
 			isa = PBXGroup;
 			children = (
 				1FC550981D5AB34900A7BC3E /* TodoListDemo.swift */,
 				1FC550991D5AB34900A7BC3E /* TodoListDemo.xib */,
 			);
-			path = "基于组件版本";
+			path = "组件版本";
 			sourceTree = "<group>";
 		};
-		1FC550A61D5AB37200A7BC3E /* Render */ = {
+		1FC550A61D5AB37200A7BC3E /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				1FC550D01D5AB41C00A7BC3E /* YYXibView.swift */,
-				1FC550C71D5AB40400A7BC3E /* YYFoundation */,
 				1FC550A71D5AB37E00A7BC3E /* ReSwift */,
 				1FC5504C1D5AB31800A7BC3E /* YYCategory */,
+				1FC550C71D5AB40400A7BC3E /* YYFoundation */,
+				1FC550D01D5AB41C00A7BC3E /* YYXibView.swift */,
 			);
-			name = Render;
+			path = Vender;
 			sourceTree = "<group>";
 		};
 		1FC550A71D5AB37E00A7BC3E /* ReSwift */ = {
 			isa = PBXGroup;
 			children = (
 				1FC550A81D5AB37E00A7BC3E /* CoreTypes */,
+				1FC550B41D5AB37E00A7BC3E /* Utils */,
 				1FC550B21D5AB37E00A7BC3E /* Info.plist */,
 				1FC550B31D5AB37E00A7BC3E /* ReSwift.h */,
-				1FC550B41D5AB37E00A7BC3E /* Utils */,
 			);
 			path = ReSwift;
 			sourceTree = "<group>";
@@ -615,6 +615,7 @@
 				1FC5503F1D5AB06500A7BC3E /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		1FC550431D5AB06500A7BC3E /* LaunchScreen.storyboard */ = {
@@ -623,6 +624,7 @@
 				1FC550441D5AB06500A7BC3E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -756,6 +758,7 @@
 				1FC5504B1D5AB06500A7BC3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
