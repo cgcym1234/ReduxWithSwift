@@ -68,6 +68,8 @@
 		1FC550CE1D5AB40400A7BC3E /* YYStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC550CA1D5AB40400A7BC3E /* YYStruct.swift */; };
 		1FC550CF1D5AB40400A7BC3E /* YYSystemNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC550CB1D5AB40400A7BC3E /* YYSystemNotification.swift */; };
 		1FC550D11D5AB41C00A7BC3E /* YYXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC550D01D5AB41C00A7BC3E /* YYXibView.swift */; };
+		EE7E483B1D78027000576A90 /* XibView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E483A1D78027000576A90 /* XibView3.swift */; };
+		EE7E483E1D7802AE00576A90 /* XibView3.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7E483D1D7802AE00576A90 /* XibView3.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +137,8 @@
 		1FC550CA1D5AB40400A7BC3E /* YYStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYStruct.swift; sourceTree = "<group>"; };
 		1FC550CB1D5AB40400A7BC3E /* YYSystemNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYSystemNotification.swift; sourceTree = "<group>"; };
 		1FC550D01D5AB41C00A7BC3E /* YYXibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYXibView.swift; sourceTree = "<group>"; };
+		EE7E483A1D78027000576A90 /* XibView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView3.swift; sourceTree = "<group>"; };
+		EE7E483D1D7802AE00576A90 /* XibView3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibView3.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,12 +155,13 @@
 		1F1C07491D741E3C00DE6929 /* Xib模块化 */ = {
 			isa = PBXGroup;
 			children = (
-				1F1C07471D741E3800DE6929 /* XibDemo.swift */,
-				1F1C074A1D741E6000DE6929 /* XibDemo.xib */,
 				1F1C07541D74315700DE6929 /* XibView1 */,
 				1F1C07551D74315C00DE6929 /* XibView2 */,
+				EE7E483C1D78027600576A90 /* XibView3 */,
+				1F1C07471D741E3800DE6929 /* XibDemo.swift */,
+				1F1C074A1D741E6000DE6929 /* XibDemo.xib */,
 			);
-			name = "Xib模块化";
+			path = "Xib模块化";
 			sourceTree = "<group>";
 		};
 		1F1C07541D74315700DE6929 /* XibView1 */ = {
@@ -165,7 +170,7 @@
 				1F1C074C1D741EEC00DE6929 /* XibView1.swift */,
 				1F1C074E1D741EFB00DE6929 /* XibView1.xib */,
 			);
-			name = XibView1;
+			path = XibView1;
 			sourceTree = "<group>";
 		};
 		1F1C07551D74315C00DE6929 /* XibView2 */ = {
@@ -174,7 +179,7 @@
 				1F1C07501D7425CE00DE6929 /* XibView2.swift */,
 				1F1C07521D7425DA00DE6929 /* XibView2.xib */,
 			);
-			name = XibView2;
+			path = XibView2;
 			sourceTree = "<group>";
 		};
 		1FC5502E1D5AB06400A7BC3E = {
@@ -196,15 +201,15 @@
 		1FC550391D5AB06500A7BC3E /* ReduxWithSwift */ = {
 			isa = PBXGroup;
 			children = (
-				1FC5503A1D5AB06500A7BC3E /* AppDelegate.swift */,
-				1FC5503E1D5AB06500A7BC3E /* Main.storyboard */,
-				1FC5503C1D5AB06500A7BC3E /* ViewController.swift */,
 				1F1C07491D741E3C00DE6929 /* Xib模块化 */,
 				1FC550881D5AB34900A7BC3E /* TodoList应用 */,
 				1FC550A61D5AB37200A7BC3E /* Vender */,
+				1FC5503A1D5AB06500A7BC3E /* AppDelegate.swift */,
 				1FC550411D5AB06500A7BC3E /* Assets.xcassets */,
 				1FC550461D5AB06500A7BC3E /* Info.plist */,
 				1FC550431D5AB06500A7BC3E /* LaunchScreen.storyboard */,
+				1FC5503E1D5AB06500A7BC3E /* Main.storyboard */,
+				1FC5503C1D5AB06500A7BC3E /* ViewController.swift */,
 			);
 			path = ReduxWithSwift;
 			sourceTree = "<group>";
@@ -522,6 +527,15 @@
 			path = YYFoundation;
 			sourceTree = "<group>";
 		};
+		EE7E483C1D78027600576A90 /* XibView3 */ = {
+			isa = PBXGroup;
+			children = (
+				EE7E483A1D78027000576A90 /* XibView3.swift */,
+				EE7E483D1D7802AE00576A90 /* XibView3.xib */,
+			);
+			path = XibView3;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -585,6 +599,7 @@
 				1FC550C21D5AB37E00A7BC3E /* Info.plist in Resources */,
 				1FC550A31D5AB34900A7BC3E /* TodoListReduxDemo.xib in Resources */,
 				1F1C074B1D741E6000DE6929 /* XibDemo.xib in Resources */,
+				EE7E483E1D7802AE00576A90 /* XibView3.xib in Resources */,
 				1F1C07531D7425DA00DE6929 /* XibView2.xib in Resources */,
 				1FC5509B1D5AB34900A7BC3E /* TodoFooter.xib in Resources */,
 				1FC550451D5AB06500A7BC3E /* LaunchScreen.storyboard in Resources */,
@@ -618,6 +633,7 @@
 				1FC5503B1D5AB06500A7BC3E /* AppDelegate.swift in Sources */,
 				1FC550C31D5AB37E00A7BC3E /* Assertions.swift in Sources */,
 				1FC550CD1D5AB40400A7BC3E /* YYProtocol.swift in Sources */,
+				EE7E483B1D78027000576A90 /* XibView3.swift in Sources */,
 				1FC550CE1D5AB40400A7BC3E /* YYStruct.swift in Sources */,
 				1FC550C61D5AB37E00A7BC3E /* TypeHelper.swift in Sources */,
 				1FC550821D5AB31800A7BC3E /* UITabBarController+YYExtension.swift in Sources */,

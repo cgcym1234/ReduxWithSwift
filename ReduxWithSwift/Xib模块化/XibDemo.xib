@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XibDemo" customModule="ReduxWithSwift" customModuleProvider="target">
@@ -22,11 +22,32 @@
                         <constraint firstAttribute="height" constant="66" id="kdq-mm-bfK"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aP-1i-TPX" customClass="XibView3" customModule="ReduxWithSwift" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="386.5" width="375" height="66"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Xib3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xG-R2-0dX">
+                            <rect key="frame" x="312" y="29" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.19215686269999999" green="0.74117647060000003" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="qkV-Ih-T7H"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="XibView3"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="8wV-wt-fYa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0NT-0t-F0x"/>
                 <constraint firstAttribute="trailing" secondItem="8wV-wt-fYa" secondAttribute="trailing" id="20q-R4-3SA"/>
+                <constraint firstAttribute="trailing" secondItem="5aP-1i-TPX" secondAttribute="trailing" id="L0a-rV-Zgl"/>
+                <constraint firstItem="5aP-1i-TPX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="M0s-pe-IMv"/>
+                <constraint firstItem="5aP-1i-TPX" firstAttribute="top" secondItem="8wV-wt-fYa" secondAttribute="bottom" constant="20" id="Xdl-rr-Vkr"/>
                 <constraint firstItem="8wV-wt-fYa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="oej-90-uZN"/>
                 <constraint firstItem="8wV-wt-fYa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tHt-Lv-Cgf"/>
                 <constraint firstItem="8wV-wt-fYa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tcF-Hw-D5P"/>

@@ -8,15 +8,12 @@
 
 import UIKit
 
-@IBDesignable
 class XibView2: UIView {
     
     var contenView: UIView!
     
     @IBOutlet weak var textlabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
-//    @IBInspectable var text: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,8 +24,6 @@ class XibView2: UIView {
         contenView.frame = self.bounds
         addSubview(contenView)
         self.contenView = contenView
-        
-//        textlabel.text = text
     }
     
 }

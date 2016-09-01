@@ -11,11 +11,16 @@ import UIKit
 public class YYXibView: UIView {
     public weak var xibView: UIView?
     
-    public override func willMoveToSuperview(newSuperview: UIView?) {
-        if newSuperview != nil && xibView == nil {
-            loadXibView()
-        }
-        super.willMoveToSuperview(newSuperview)
+//    public override func willMoveToSuperview(newSuperview: UIView?) {
+//        if newSuperview != nil && xibView == nil {
+//            loadXibView()
+//        }
+//        super.willMoveToSuperview(newSuperview)
+//    }
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        loadXibView()
     }
     
     func loadXibView() {
