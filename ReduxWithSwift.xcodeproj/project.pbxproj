@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1C07481D741E3800DE6929 /* XibDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C07471D741E3800DE6929 /* XibDemo.swift */; };
+		1F1C074B1D741E6000DE6929 /* XibDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C074A1D741E6000DE6929 /* XibDemo.xib */; };
+		1F1C074D1D741EEC00DE6929 /* XibView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C074C1D741EEC00DE6929 /* XibView1.swift */; };
+		1F1C074F1D741EFB00DE6929 /* XibView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C074E1D741EFB00DE6929 /* XibView1.xib */; };
+		1F1C07511D7425CE00DE6929 /* XibView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C07501D7425CE00DE6929 /* XibView2.swift */; };
+		1F1C07531D7425DA00DE6929 /* XibView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C07521D7425DA00DE6929 /* XibView2.xib */; };
 		1FC5503B1D5AB06500A7BC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC5503A1D5AB06500A7BC3E /* AppDelegate.swift */; };
 		1FC5503D1D5AB06500A7BC3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC5503C1D5AB06500A7BC3E /* ViewController.swift */; };
 		1FC550401D5AB06500A7BC3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC5503E1D5AB06500A7BC3E /* Main.storyboard */; };
@@ -65,6 +71,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F1C07471D741E3800DE6929 /* XibDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibDemo.swift; sourceTree = "<group>"; };
+		1F1C074A1D741E6000DE6929 /* XibDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibDemo.xib; sourceTree = "<group>"; };
+		1F1C074C1D741EEC00DE6929 /* XibView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView1.swift; sourceTree = "<group>"; };
+		1F1C074E1D741EFB00DE6929 /* XibView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibView1.xib; sourceTree = "<group>"; };
+		1F1C07501D7425CE00DE6929 /* XibView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView2.swift; sourceTree = "<group>"; };
+		1F1C07521D7425DA00DE6929 /* XibView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibView2.xib; sourceTree = "<group>"; };
 		1FC550371D5AB06400A7BC3E /* ReduxWithSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxWithSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC5503A1D5AB06500A7BC3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC5503C1D5AB06500A7BC3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +148,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F1C07491D741E3C00DE6929 /* Xib模块化 */ = {
+			isa = PBXGroup;
+			children = (
+				1F1C07471D741E3800DE6929 /* XibDemo.swift */,
+				1F1C074A1D741E6000DE6929 /* XibDemo.xib */,
+				1F1C07541D74315700DE6929 /* XibView1 */,
+				1F1C07551D74315C00DE6929 /* XibView2 */,
+			);
+			name = "Xib模块化";
+			sourceTree = "<group>";
+		};
+		1F1C07541D74315700DE6929 /* XibView1 */ = {
+			isa = PBXGroup;
+			children = (
+				1F1C074C1D741EEC00DE6929 /* XibView1.swift */,
+				1F1C074E1D741EFB00DE6929 /* XibView1.xib */,
+			);
+			name = XibView1;
+			sourceTree = "<group>";
+		};
+		1F1C07551D74315C00DE6929 /* XibView2 */ = {
+			isa = PBXGroup;
+			children = (
+				1F1C07501D7425CE00DE6929 /* XibView2.swift */,
+				1F1C07521D7425DA00DE6929 /* XibView2.xib */,
+			);
+			name = XibView2;
+			sourceTree = "<group>";
+		};
 		1FC5502E1D5AB06400A7BC3E = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +199,7 @@
 				1FC5503A1D5AB06500A7BC3E /* AppDelegate.swift */,
 				1FC5503E1D5AB06500A7BC3E /* Main.storyboard */,
 				1FC5503C1D5AB06500A7BC3E /* ViewController.swift */,
+				1F1C07491D741E3C00DE6929 /* Xib模块化 */,
 				1FC550881D5AB34900A7BC3E /* TodoList应用 */,
 				1FC550A61D5AB37200A7BC3E /* Vender */,
 				1FC550411D5AB06500A7BC3E /* Assets.xcassets */,
@@ -542,9 +584,12 @@
 				1FC5509D1D5AB34900A7BC3E /* TodoHeader.xib in Resources */,
 				1FC550C21D5AB37E00A7BC3E /* Info.plist in Resources */,
 				1FC550A31D5AB34900A7BC3E /* TodoListReduxDemo.xib in Resources */,
+				1F1C074B1D741E6000DE6929 /* XibDemo.xib in Resources */,
+				1F1C07531D7425DA00DE6929 /* XibView2.xib in Resources */,
 				1FC5509B1D5AB34900A7BC3E /* TodoFooter.xib in Resources */,
 				1FC550451D5AB06500A7BC3E /* LaunchScreen.storyboard in Resources */,
 				1FC5509F1D5AB34900A7BC3E /* TodoList.xib in Resources */,
+				1F1C074F1D741EFB00DE6929 /* XibView1.xib in Resources */,
 				1FC550421D5AB06500A7BC3E /* Assets.xcassets in Resources */,
 				1FC550401D5AB06500A7BC3E /* Main.storyboard in Resources */,
 			);
@@ -557,13 +602,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1C07511D7425CE00DE6929 /* XibView2.swift in Sources */,
 				1FC550761D5AB31800A7BC3E /* BooleanType+YYExtension.swift in Sources */,
+				1F1C07481D741E3800DE6929 /* XibDemo.swift in Sources */,
 				1FC5503D1D5AB06500A7BC3E /* ViewController.swift in Sources */,
 				1FC5507C1D5AB31800A7BC3E /* String+YYExtension.swift in Sources */,
 				1FC5509E1D5AB34900A7BC3E /* TodoList.swift in Sources */,
 				1FC550861D5AB31800A7BC3E /* UIWebView+YYExtension.swift in Sources */,
 				1FC5507B1D5AB31800A7BC3E /* NSAttributedString+YYExtension.swift in Sources */,
 				1FC5507F1D5AB31800A7BC3E /* UIColor+YYKit.swift in Sources */,
+				1F1C074D1D741EEC00DE6929 /* XibView1.swift in Sources */,
 				1FC5509A1D5AB34900A7BC3E /* TodoFooter.swift in Sources */,
 				1FC550D11D5AB41C00A7BC3E /* YYXibView.swift in Sources */,
 				1FC5507D1D5AB31800A7BC3E /* SKView+YYKit.swift in Sources */,

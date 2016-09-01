@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XibDemo" customModule="ReduxWithSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="Um0-IE-mdX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wV-wt-fYa" customClass="XibView2" customModule="ReduxWithSwift" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="300.5" width="375" height="66"/>
+                    <color key="backgroundColor" red="1" green="0.54754762589999995" blue="0.65394765070000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="kdq-mm-bfK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8wV-wt-fYa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0NT-0t-F0x"/>
+                <constraint firstAttribute="trailing" secondItem="8wV-wt-fYa" secondAttribute="trailing" id="20q-R4-3SA"/>
+                <constraint firstItem="8wV-wt-fYa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="oej-90-uZN"/>
+                <constraint firstItem="8wV-wt-fYa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="tHt-Lv-Cgf"/>
+                <constraint firstItem="8wV-wt-fYa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tcF-Hw-D5P"/>
+                <constraint firstItem="8wV-wt-fYa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="zEM-Jc-Iu8"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="oej-90-uZN"/>
+                    <exclude reference="tHt-Lv-Cgf"/>
+                    <exclude reference="zEM-Jc-Iu8"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

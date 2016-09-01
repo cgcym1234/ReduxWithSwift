@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="XibView1" customModule="ReduxWithSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="og" translatesAutoresizingMaskIntoConstraints="NO" id="iAn-gS-l0g">
+                    <rect key="frame" x="20" y="28" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="iAn-gS-l0g" secondAttribute="height" multiplier="1:1" id="Dc5-Uw-aiF"/>
+                        <constraint firstAttribute="width" constant="40" id="kM8-6K-4vz"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adq-Re-SI4">
+                    <rect key="frame" x="70" y="37.5" width="42.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="adq-Re-SI4" firstAttribute="centerY" secondItem="iAn-gS-l0g" secondAttribute="centerY" id="8wo-5G-K1A"/>
+                <constraint firstItem="adq-Re-SI4" firstAttribute="leading" secondItem="iAn-gS-l0g" secondAttribute="trailing" constant="10" id="G1i-2p-aCE"/>
+                <constraint firstItem="iAn-gS-l0g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="jEt-ku-Py3"/>
+                <constraint firstItem="iAn-gS-l0g" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="koq-F7-Bi5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="iAn-gS-l0g" id="REa-SC-GNk"/>
+                <outlet property="textlabel" destination="adq-Re-SI4" id="Hj8-cP-pQ0"/>
+            </connections>
+            <point key="canvasLocation" x="153" y="-79"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="og" width="600" height="600"/>
+    </resources>
+</document>

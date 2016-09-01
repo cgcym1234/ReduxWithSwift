@@ -27,6 +27,10 @@ class TodoHeader: YYXibView, UITextFieldDelegate, YYComponent {
         initialization()
     }
     
+    deinit {
+        print("TodoHeader deinit")
+    }
+    
     // MARK: - Public
     
     var model = TodoHeaderModel()

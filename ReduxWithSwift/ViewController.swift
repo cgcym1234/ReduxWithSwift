@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         extendedLayoutNone()
         
+        addButtonToView(title: "xib模块化") { [weak self] (button) in
+            let vc = XibDemo()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         addButtonToView(title: "组件模式写的TodoList") { [weak self] (button) in
             let vc = TodoListDemo()
             self?.navigationController?.pushViewController(vc, animated: true)

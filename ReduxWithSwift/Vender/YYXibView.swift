@@ -9,7 +9,7 @@
 import UIKit
 
 public class YYXibView: UIView {
-    @IBOutlet public weak var xibView: UIView?
+    public weak var xibView: UIView?
     
     public override func willMoveToSuperview(newSuperview: UIView?) {
         if newSuperview != nil && xibView == nil {

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XibView2" customModule="ReduxWithSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="NCC-TL-wG2" id="Yud-x6-2f1"/>
+                <outlet property="textlabel" destination="3Tq-bW-HqM" id="eHh-TX-QvN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="CAR-pX-mUD">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="og" translatesAutoresizingMaskIntoConstraints="NO" id="NCC-TL-wG2">
+                    <rect key="frame" x="20" y="8.5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="GaT-oh-jer"/>
+                        <constraint firstAttribute="width" secondItem="NCC-TL-wG2" secondAttribute="height" multiplier="1:1" id="iph-Of-D30"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tq-bW-HqM">
+                    <rect key="frame" x="70" y="17.5" width="42.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="NCC-TL-wG2" firstAttribute="leading" secondItem="CAR-pX-mUD" secondAttribute="leading" constant="20" id="9Je-1K-Ngz"/>
+                <constraint firstItem="3Tq-bW-HqM" firstAttribute="centerY" secondItem="NCC-TL-wG2" secondAttribute="centerY" id="O4J-lX-6MY"/>
+                <constraint firstItem="NCC-TL-wG2" firstAttribute="centerY" secondItem="CAR-pX-mUD" secondAttribute="centerY" id="sqH-be-9Z4"/>
+                <constraint firstItem="3Tq-bW-HqM" firstAttribute="leading" secondItem="NCC-TL-wG2" secondAttribute="trailing" constant="10" id="xMa-bW-4Sa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="147" y="-119.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="og" width="600" height="600"/>
+    </resources>
+</document>

@@ -19,8 +19,23 @@ class TodoListDemo: UIViewController {
     var todoFooterModel = TodoFooterModel()
     
     func initialization() {
-        // MARK: - 注意：如果renderTodoList函数放在这里的话，会造成self无法释放
-//        func renderTodoList(scrollToBottom: Bool = true) {}
+        // MARK: - 注意：如果使用这里的renderTodoList函数会造成self无法释放，因为在函数里面使用的是strong self
+        func renderTodoList(scrollToBottom: Bool = true) {
+            let filter = todoFooterModel.filter
+            let newModel: [TodoListItemModel]
+            switch filter {
+            case .all:
+                newModel = todoListModel
+            case .completed:
+                newModel = todoListModel.filter { $0.completed }
+            case .active:
+                newModel = todoListModel.flatMap { !$0.completed ? $0 : nil  }
+            }
+            todoList.render(newModel)
+            if scrollToBottom {
+                todoList.scrollToBottomIfNeeded()
+            }
+        }
         
         todoHeader.addButtonDicTapCallback = { [weak self] text in
             if self == nil {
@@ -31,6 +46,9 @@ class TodoListDemo: UIViewController {
                 item.id = self!.todoListModel.count
                 self?.todoListModel.append(item)
                 self?.renderTodoList()
+                
+                //注意：函数内的renderTodoList会造成循环引用
+                //renderTodoList()
             }
         }
         todoList.todoListDidTapItemCallback = { [weak self] itemId in
