@@ -24,6 +24,8 @@ class XibView2: UIView {
         contenView.frame = self.bounds
         addSubview(contenView)
         self.contenView = contenView
+        
+        textlabel.text = "XibView2"
     }
     
 }

@@ -15,10 +15,12 @@ class XibView3: YYXibView {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBInspectable var text: String = ""
+    @IBInspectable var imageName: String = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
         textlabel.text = text
+        imageView.image = UIImage(named: imageName)
     }
 
 }
