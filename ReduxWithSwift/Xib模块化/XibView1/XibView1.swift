@@ -20,7 +20,7 @@ class XibView1: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         translatesAutoresizingMaskIntoConstraints = true
-        autoresizingMask = UIViewAutoresizing()
+        autoresizingMask = []
     }
     
 }
