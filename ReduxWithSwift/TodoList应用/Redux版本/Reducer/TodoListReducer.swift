@@ -9,7 +9,8 @@
 import Foundation
 
 class TodoReducer: Reducer {
-    
+    typealias ReducerStateType = TodoState
+
     func handleAction(action: Action, state: TodoState?) -> TodoState {
         guard let action = action as? TodoAction else {
             return TodoState()
@@ -29,7 +30,7 @@ class TodoReducer: Reducer {
      主 reducer 并不需要设置初始化时完整的 state。
      初始时，如果传入 undefined, 子 reducer 将负责返回它们的默认值。
      */
-    func handleToDo(action: TodoAction, state: [TodoListItemModel]?) -> [TodoListItemModel] {
+    func handleToDo(_ action: TodoAction, state: [TodoListItemModel]?) -> [TodoListItemModel] {
         var newState = state ?? [TodoListItemModel]()
         switch action {
         case .add(let text):
@@ -49,7 +50,7 @@ class TodoReducer: Reducer {
         return newState
     }
     
-    func handleFilter(action: TodoAction, state: TodoFooterFilter?) -> TodoFooterFilter {
+    func handleFilter(_ action: TodoAction, state: TodoFooterFilter?) -> TodoFooterFilter {
         var newState = state ?? TodoFooterFilter.all
         switch action {
         case .filter(let type):
@@ -60,7 +61,7 @@ class TodoReducer: Reducer {
         return newState
     }
     
-    func handleScrollToBottom(action: TodoAction, state: Bool?) -> Bool {
+    func handleScrollToBottom(_ action: TodoAction, state: Bool?) -> Bool {
         var newState = true
         switch action {
         case .completed(_):

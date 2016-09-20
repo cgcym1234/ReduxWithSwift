@@ -48,22 +48,22 @@ class TodoFooter: YYXibView, YYComponent {
     
     // MARK: - Private
     
-    private var buttons = [UIButton]()
-    @IBOutlet private weak var textlabel: UILabel!
-    @IBOutlet private weak var allButton: UIButton!
-    @IBOutlet private weak var completedButton: UIButton!
-    @IBOutlet private weak var activeButton: UIButton!
+    fileprivate var buttons = [UIButton]()
+    @IBOutlet fileprivate weak var textlabel: UILabel!
+    @IBOutlet fileprivate weak var allButton: UIButton!
+    @IBOutlet fileprivate weak var completedButton: UIButton!
+    @IBOutlet fileprivate weak var activeButton: UIButton!
     
-    private func updateButtonState() {
+    fileprivate func updateButtonState() {
         for button in buttons {
-            button.enabled = model.filter.rawValue != button.tag
+            button.isEnabled = model.filter.rawValue != button.tag
         }
     }
     
-    @IBAction private func buttonDidTap(sender: UIButton) {
+    @IBAction fileprivate func buttonDidTap(_ sender: UIButton) {
         let filter = TodoFooterFilter(rawValue: sender.tag)!
         model.filter = filter
-        updateButtonState()
+        //updateButtonState()
         buttonDidTapCallback?(filter)
     }
 }

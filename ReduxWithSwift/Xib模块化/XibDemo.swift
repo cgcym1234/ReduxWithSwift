@@ -17,7 +17,7 @@ class XibDemo: UIViewController {
     }
     
     func addXibView1() {
-        let view1 = XibView1.instanceFromNib()
+        let view1 = XibView1.instance()
         view1.textlabel.text = "XibView1"
         view.addSubview(view1)
     }

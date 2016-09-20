@@ -32,7 +32,7 @@ class TodoList: YYXibView, UITableViewDataSource, UITableViewDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 40
-        tableView.registerClass(TodoListItem.self, forCellReuseIdentifier: "TodoListItem")
+        tableView.register(TodoListItem.self, forCellReuseIdentifier: "TodoListItem")
     }
     
     override func awakeFromNib() {
@@ -43,7 +43,7 @@ class TodoList: YYXibView, UITableViewDataSource, UITableViewDelegate {
     // MARK: - Public
     
     var model = [TodoListItemModel]()
-    var todoListDidTapItemCallback: ((itemId : Int) -> Void)?
+    var todoListDidTapItemCallback: ((_ itemId : Int) -> Void)?
     
     func render(model: Any? = nil) {
         if let outModel = model as? [TodoListItemModel] {
@@ -52,7 +52,7 @@ class TodoList: YYXibView, UITableViewDataSource, UITableViewDelegate {
         tableView.reloadData()
     }
     
-    func scrollToBottomIfNeeded(animated: Bool = true) {
+    func scrollToBottomIfNeeded(_ animated: Bool = true) {
         if self.model.count > 4 {
             tableView.scrollToBottom()
         }
@@ -60,21 +60,21 @@ class TodoList: YYXibView, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Private
     
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet fileprivate weak var tableView: UITableView!
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TodoListItem", forIndexPath: indexPath) as! TodoListItem
-        cell.render(model[indexPath.row])
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListItem", for: indexPath) as! TodoListItem
+        cell.render(model: model[(indexPath as NSIndexPath).row])
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        todoListDidTapItemCallback?(itemId: model[indexPath.row].id)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        todoListDidTapItemCallback?(model[(indexPath as NSIndexPath).row].id)
     }
 }
 
@@ -88,12 +88,12 @@ class TodoListItem: UITableViewCell, YYComponent {
         let text = self.model.text
         if self.model.completed {
             textLabel?.text = nil
-            textLabel?.attributedText = NSAttributedString(string: text, attributes: [NSStrikethroughStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue])
-            textLabel?.textColor = UIColor.orangeColor()
+            textLabel?.attributedText = NSAttributedString(string: text, attributes: [NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+            textLabel?.textColor = UIColor.orange
         } else {
             textLabel?.attributedText = nil
             textLabel?.text = self.model.text
-            textLabel?.textColor = UIColor.blackColor()
+            textLabel?.textColor = UIColor.black
         }
         
     }

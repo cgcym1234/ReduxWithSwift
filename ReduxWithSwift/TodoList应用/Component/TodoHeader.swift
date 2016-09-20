@@ -7,6 +7,26 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 struct TodoHeaderModel {
     var text: String? = nil
@@ -17,9 +37,9 @@ class TodoHeader: YYXibView, UITextFieldDelegate, YYComponent {
     
     func initialization() {
         textField.delegate = self
-        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), forControlEvents: .EditingChanged)
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.text = self.model.text
-        addButton.enabled = textField.text?.characters.count > 0
+        addButton.isEnabled = textField.text?.characters.count > 0
     }
     
     override func awakeFromNib() {
@@ -45,22 +65,22 @@ class TodoHeader: YYXibView, UITextFieldDelegate, YYComponent {
     
     // MARK: - Private
     
-    @IBOutlet private weak var textField: UITextField!
-    @IBOutlet private weak var addButton: UIButton!
+    @IBOutlet fileprivate weak var textField: UITextField!
+    @IBOutlet fileprivate weak var addButton: UIButton!
     
-    @IBAction private func addButtonDidTap(sender: UIButton) {
+    @IBAction fileprivate func addButtonDidTap(_ sender: UIButton) {
         if textField.text?.characters.count > 0 {
             addButtonDicTapCallback?(textField.text)
             textField.text = nil
             model.text = nil
         }
     }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addButtonDidTap(addButton)
         return true
     }
     
-    func textFieldDidChange(textField: UITextField) {
-        addButton.enabled = textField.text?.characters.count > 0
+    func textFieldDidChange(_ textField: UITextField) {
+        addButton.isEnabled = textField.text?.characters.count > 0
     }
 }

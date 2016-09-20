@@ -20,7 +20,7 @@ class TodoListDemo: UIViewController {
     
     func initialization() {
         // MARK: - 注意：如果使用这里的renderTodoList函数会造成self无法释放，因为在函数里面使用的是strong self
-        func renderTodoList(scrollToBottom: Bool = true) {
+        func renderTodoList(_ scrollToBottom: Bool = true) {
             let filter = todoFooterModel.filter
             let newModel: [TodoListItemModel]
             switch filter {
@@ -31,7 +31,7 @@ class TodoListDemo: UIViewController {
             case .active:
                 newModel = todoListModel.flatMap { !$0.completed ? $0 : nil  }
             }
-            todoList.render(newModel)
+            todoList.render(model: newModel)
             if scrollToBottom {
                 todoList.scrollToBottomIfNeeded()
             }
@@ -67,12 +67,13 @@ class TodoListDemo: UIViewController {
             if self != nil {
                 self!.todoFooterModel.filter = filter
                 self?.renderTodoList()
+                self?.todoFooter.render(model: TodoFooterModel(filter: filter))
             }
         }
     }
     
     // MARK: - 注意：renderTodoList函数最好不要放在initialization里面，因为在函数里面使用的是strong self
-    func renderTodoList(scrollToBottom: Bool = true) {
+    func renderTodoList(_ scrollToBottom: Bool = true) {
         let filter = todoFooterModel.filter
         let newModel: [TodoListItemModel]
         switch filter {
@@ -83,7 +84,7 @@ class TodoListDemo: UIViewController {
         case .active:
             newModel = todoListModel.flatMap { !$0.completed ? $0 : nil  }
         }
-        todoList.render(newModel)
+        todoList.render(model: newModel)
         if scrollToBottom {
             todoList.scrollToBottomIfNeeded()
         }

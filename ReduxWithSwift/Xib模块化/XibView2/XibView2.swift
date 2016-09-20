@@ -17,10 +17,10 @@ class XibView2: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        guard let contenView = NSBundle.mainBundle().loadNibNamed(self.classNameString, owner: self, options: nil).first as? UIView else {
+        guard let contenView = Bundle.main.loadNibNamed(self.className, owner: self, options: nil)?.first as? UIView else {
             return
         }
-        contenView.backgroundColor = UIColor.clearColor()
+        contenView.backgroundColor = UIColor.clear
         contenView.frame = self.bounds
         addSubview(contenView)
         self.contenView = contenView

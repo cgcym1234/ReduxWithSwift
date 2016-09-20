@@ -14,25 +14,19 @@ let TodoStore = Store<TodoState>(
 )
 
 struct TodoState: StateType {
-    var todoListItems = [TodoListItemModel]()
-    var filter = TodoFooterFilter.all
-    var scrollToBottom = false
+    var todoListItems: [TodoListItemModel]
+    var filter: TodoFooterFilter
+    var scrollToBottom: Bool
     
-    init(todoListItems: [TodoListItemModel], filter: TodoFooterFilter, scrollToBottom: Bool) {
+    init(todoListItems: [TodoListItemModel] = [TodoListItemModel](), filter: TodoFooterFilter = .all, scrollToBottom: Bool = false) {
         self.todoListItems = todoListItems
         self.filter = filter
         self.scrollToBottom = scrollToBottom
     }
-    init(todoListItems: [TodoListItemModel], filter: TodoFooterFilter) {
-        self.todoListItems = todoListItems
-        self.filter = filter
-    }
-    init() {
-        
-    }
 }
 
 class TodoListReduxDemo: UIViewController, StoreSubscriber {
+    typealias StoreSubscriberStateType = TodoState
     
     @IBOutlet weak var todoHeader: TodoHeader!
     @IBOutlet weak var todoList: TodoList!
@@ -48,10 +42,11 @@ class TodoListReduxDemo: UIViewController, StoreSubscriber {
         case .active:
             items = state.todoListItems.filter{ !$0.completed }
         }
-        todoList.render(items)
+        todoList.render(model: items)
         if state.scrollToBottom {
             todoList.scrollToBottomIfNeeded()
         }
+        todoFooter.render(model: TodoFooterModel(filter: state.filter))
     }
     
     func initialization() {
