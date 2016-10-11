@@ -8,7 +8,13 @@
 
 import UIKit
 
-public class YYXibView: YYView {
+protocol YYComponent {
+    
+}
+
+
+
+public class YYXibView: UIView {
     public weak var xibContentView: UIView?
     
     public override func willMove(toSuperview newSuperview: UIView?) {

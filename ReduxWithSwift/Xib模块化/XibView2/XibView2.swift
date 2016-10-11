@@ -20,12 +20,17 @@ class XibView2: UIView {
         guard let contenView = Bundle.main.loadNibNamed(self.className, owner: self, options: nil)?.first as? UIView else {
             return
         }
+
         contenView.backgroundColor = UIColor.clear
-        contenView.frame = self.bounds
         addSubview(contenView)
         self.contenView = contenView
         
         textlabel.text = "XibView2"
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contenView.frame = self.bounds
     }
     
 }
