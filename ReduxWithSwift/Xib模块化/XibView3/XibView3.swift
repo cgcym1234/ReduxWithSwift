@@ -14,13 +14,19 @@ class XibView3: YYXibView {
     @IBOutlet weak var textlabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBInspectable var text: String = ""
-    @IBInspectable var imageName: String = ""
+    @IBInspectable var text: String? {
+        didSet {
+            textlabel.text = text
+        }
+    }
+    @IBInspectable var image: UIImage? {
+        didSet {
+            imageView.image = image
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        textlabel.text = text
-        imageView.image = UIImage(named: imageName)
     }
 
 }

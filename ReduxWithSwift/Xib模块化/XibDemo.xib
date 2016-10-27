@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2338c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -37,8 +37,8 @@
                         <constraint firstAttribute="height" constant="66" id="qkV-Ih-T7H"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="XibView3"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="imageName" value="GoogleLogo"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="哈哈还"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="GoogleLogo"/>
                     </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
@@ -63,4 +63,7 @@
             </variation>
         </view>
     </objects>
+    <resources>
+        <image name="GoogleLogo" width="800" height="450"/>
+    </resources>
 </document>

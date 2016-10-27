@@ -17,11 +17,14 @@ protocol YYComponent {
 public class YYXibView: UIView {
     public weak var xibContentView: UIView?
     
-    public override func willMove(toSuperview newSuperview: UIView?) {
-        if newSuperview != nil && xibContentView == nil {
-            loadXibView()
-        }
-        super.willMove(toSuperview: newSuperview)
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        loadXibView()
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadXibView()
     }
     
     func loadXibView() {
@@ -29,17 +32,15 @@ public class YYXibView: UIView {
             return
         }
         xibView.backgroundColor = UIColor.clear
-        xibView.translatesAutoresizingMaskIntoConstraints = true
-        xibView.autoresizingMask = [
-            .flexibleHeight,
-            .flexibleWidth,
-            .flexibleTopMargin,
-            .flexibleLeftMargin,
-            .flexibleBottomMargin,
-            .flexibleRightMargin
-        ]
-        xibView.frame = self.bounds
         addSubview(xibView)
+        
+        xibView.translatesAutoresizingMaskIntoConstraints = false
+        let top = NSLayoutConstraint(item: xibView, attribute: .top, relatedBy: .equal, toItem: xibView.superview, attribute: .top, multiplier: 1, constant: 0)
+        let left = NSLayoutConstraint(item: xibView, attribute: .leading, relatedBy: .equal, toItem: xibView.superview, attribute: .leading, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: xibView, attribute: .bottom, relatedBy: .equal, toItem: xibView.superview, attribute: .bottom, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: xibView, attribute: .trailing, relatedBy: .equal, toItem: xibView.superview, attribute: .trailing, multiplier: 1, constant: 0)
+        xibView.superview?.addConstraints([top, left, bottom, right])
+        
         xibContentView = xibView
     }
     
