@@ -29,7 +29,7 @@ class TodoListDemo: UIViewController {
             case .completed:
                 newModel = todoListModel.filter { $0.completed }
             case .active:
-                newModel = todoListModel.flatMap { !$0.completed ? $0 : nil  }
+				newModel = todoListModel.compactMap { !$0.completed ? $0 : nil  }
             }
             todoList.render(model: newModel)
             if scrollToBottom {
@@ -82,7 +82,7 @@ class TodoListDemo: UIViewController {
         case .completed:
             newModel = todoListModel.filter { $0.completed }
         case .active:
-            newModel = todoListModel.flatMap { !$0.completed ? $0 : nil  }
+            newModel = todoListModel.compactMap { !$0.completed ? $0 : nil  }
         }
         todoList.render(model: newModel)
         if scrollToBottom {

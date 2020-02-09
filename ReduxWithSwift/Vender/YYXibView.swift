@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol YYComponent {
-    
-}
-
-
 
 public class YYXibView: UIView {
     public weak var xibContentView: UIView?

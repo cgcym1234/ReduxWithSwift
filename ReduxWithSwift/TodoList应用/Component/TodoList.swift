@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 struct TodoListItemModel {
     var id: Int = 0
     var text = ""
@@ -78,7 +79,7 @@ class TodoList: YYXibView, UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-class TodoListItem: UITableViewCell, YYComponent {
+class TodoListItem: UITableViewCell {
     var model = TodoListItemModel()
     
     func render(model: Any? = nil) {
@@ -88,7 +89,7 @@ class TodoListItem: UITableViewCell, YYComponent {
         let text = self.model.text
         if self.model.completed {
             textLabel?.text = nil
-            textLabel?.attributedText = NSAttributedString(string: text, attributes: [NSStrikethroughStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
+			textLabel?.attributedText = NSAttributedString(string: text, attributes: [NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue])
             textLabel?.textColor = UIColor.orange
         } else {
             textLabel?.attributedText = nil

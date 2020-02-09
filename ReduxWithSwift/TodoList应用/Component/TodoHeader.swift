@@ -7,27 +7,11 @@
 //
 
 import UIKit
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
+
+
+protocol YYComponent {
+	
 }
-
-fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l > r
-  default:
-    return rhs < lhs
-  }
-}
-
-
 struct TodoHeaderModel {
     var text: String? = nil
 }
@@ -39,7 +23,7 @@ class TodoHeader: YYXibView, UITextFieldDelegate, YYComponent {
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.text = self.model.text
-        addButton.isEnabled = textField.text?.characters.count > 0
+        addButton.isEnabled = (textField.text?.count)! > 0
     }
     
     override func awakeFromNib() {
@@ -69,7 +53,7 @@ class TodoHeader: YYXibView, UITextFieldDelegate, YYComponent {
     @IBOutlet fileprivate weak var addButton: UIButton!
     
     @IBAction fileprivate func addButtonDidTap(_ sender: UIButton) {
-        if textField.text?.characters.count > 0 {
+        if (textField.text?.count)! > 0 {
             addButtonDicTapCallback?(textField.text)
             textField.text = nil
             model.text = nil
@@ -80,7 +64,7 @@ class TodoHeader: YYXibView, UITextFieldDelegate, YYComponent {
         return true
     }
     
-    func textFieldDidChange(_ textField: UITextField) {
-        addButton.isEnabled = textField.text?.characters.count > 0
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        addButton.isEnabled = (textField.text?.count)! > 0
     }
 }

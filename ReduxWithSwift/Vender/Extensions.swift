@@ -11,7 +11,7 @@ import UIKit
 extension NSObject {
     // MARK: - 返回类名的String
     public static var className: String {
-        return String(describing: self.self)
+        return String(describing: self)
     }
     
     public var className: String {
@@ -65,6 +65,7 @@ extension UIViewController {
         buttonCount += 1
         addButtonToView(title: title, frame: CGRect(x: 0, y: 40*buttonCount, width: 320, height: 40), action: action)
     }
+    
     @discardableResult public func addButtonToView(title: String, frame: CGRect, action: @escaping (UIButton) -> Void) -> UIButton {
         let button = _YYButton(type: .system)
         button.action = action
@@ -76,7 +77,7 @@ extension UIViewController {
         return button
     }
     
-    func yyButtonClicked(button: _YYButton) {
+    @objc func yyButtonClicked(button: _YYButton) {
         if let action = button.action {
             action(button);
         }

@@ -6,14 +6,6 @@
 //  Copyright © 2015 Benjamin Encz. All rights reserved.
 //
 
-import Foundation
-
-public typealias DispatchFunction = (Action) -> Any
-public typealias GetState = () -> StateType?
-#if swift(>=3)
-public typealias Middleware =
-    (DispatchFunction?, @escaping GetState) -> (@escaping DispatchFunction) -> DispatchFunction
-#else
-public typealias Middleware =
-    (DispatchFunction?, GetState) -> (DispatchFunction) -> DispatchFunction
-#endif
+public typealias DispatchFunction = (Action) -> Void
+public typealias Middleware<State> = (@escaping DispatchFunction, @escaping () -> State?)
+    -> (@escaping DispatchFunction) -> DispatchFunction

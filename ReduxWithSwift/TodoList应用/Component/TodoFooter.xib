@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TodoFooter" customModule="SwiftSum" customModuleProvider="target">
@@ -25,28 +29,28 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqt-yh-ZQk">
-                    <rect key="frame" x="77" y="20.5" width="30" height="30"/>
+                    <rect key="frame" x="77" y="20.666666666666671" width="30" height="30"/>
                     <state key="normal" title="All"/>
                     <connections>
                         <action selector="buttonDidTap:" destination="-1" eventType="touchUpInside" id="drJ-gG-NZ2"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6y-Td-0pk">
-                    <rect key="frame" x="203" y="20.5" width="43" height="30"/>
+                    <rect key="frame" x="203" y="20.666666666666671" width="43" height="30"/>
                     <state key="normal" title="Active"/>
                     <connections>
                         <action selector="buttonDidTap:" destination="-1" eventType="touchUpInside" id="nyf-vC-dj5"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mji-Lj-As6">
-                    <rect key="frame" x="117" y="21" width="76" height="30"/>
+                    <rect key="frame" x="117" y="20.666666666666671" width="76" height="30"/>
                     <state key="normal" title="Completed"/>
                     <connections>
                         <action selector="buttonDidTap:" destination="-1" eventType="touchUpInside" id="8go-az-a2F"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Rqt-yh-ZQk" firstAttribute="centerY" secondItem="Zna-bZ-4u8" secondAttribute="centerY" id="4g5-As-mNw"/>
                 <constraint firstItem="Mji-Lj-As6" firstAttribute="centerY" secondItem="Rqt-yh-ZQk" secondAttribute="centerY" id="AhZ-fh-fUT"/>

@@ -12,7 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        extendedLayoutNone()
         
         addButtonToView(title: "xib模块化") { [weak self] (button) in
             let vc = XibDemo()

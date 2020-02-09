@@ -8,11 +8,6 @@
 
 import UIKit
 
-let TodoStore = Store<TodoState>(
-    reducer: TodoReducer(),
-    state: nil
-)
-
 struct TodoState: StateType {
     var todoListItems: [TodoListItemModel]
     var filter: TodoFooterFilter
@@ -26,11 +21,15 @@ struct TodoState: StateType {
 }
 
 class TodoListReduxDemo: UIViewController, StoreSubscriber {
-    typealias StoreSubscriberStateType = TodoState
     
     @IBOutlet weak var todoHeader: TodoHeader!
     @IBOutlet weak var todoList: TodoList!
     @IBOutlet weak var todoFooter: TodoFooter!
+	
+    let todoStore = Store<TodoState>(
+		reducer: TodoReducer,
+		state: nil
+	)
     
     func newState(state: TodoState) {
         var items: [TodoListItemModel]
@@ -50,16 +49,16 @@ class TodoListReduxDemo: UIViewController, StoreSubscriber {
     }
     
     func initialization() {
-        TodoStore.subscribe(self)
+        todoStore.subscribe(self)
         
-        todoHeader.addButtonDicTapCallback = { text in
-            TodoStore.dispatch(TodoAction.add(text: text!))
+        todoHeader.addButtonDicTapCallback = { [weak self] text in
+            self?.todoStore.dispatch(TodoAction.add(text: text!))
         }
-        todoList.todoListDidTapItemCallback = { itemId in
-            TodoStore.dispatch(TodoAction.completed(id: itemId))
+        todoList.todoListDidTapItemCallback = { [weak self]  itemId in
+            self?.todoStore.dispatch(TodoAction.completed(id: itemId))
         }
-        todoFooter.buttonDidTapCallback = { filter in
-            TodoStore.dispatch(TodoAction.filter(type: filter))
+        todoFooter.buttonDidTapCallback = { [weak self]  filter in
+            self?.todoStore.dispatch(TodoAction.filter(type: filter))
         }
     }
     

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 enum TodoFooterFilter: Int {
     case all, completed, active
 }
@@ -48,23 +49,25 @@ class TodoFooter: YYXibView, YYComponent {
     
     // MARK: - Private
     
-    fileprivate var buttons = [UIButton]()
+    var buttons = [UIButton]()
     @IBOutlet fileprivate weak var textlabel: UILabel!
     @IBOutlet fileprivate weak var allButton: UIButton!
     @IBOutlet fileprivate weak var completedButton: UIButton!
     @IBOutlet fileprivate weak var activeButton: UIButton!
     
-    fileprivate func updateButtonState() {
-        for button in buttons {
-            button.isEnabled = model.filter.rawValue != button.tag
-        }
-    }
+    
     
     @IBAction fileprivate func buttonDidTap(_ sender: UIButton) {
         let filter = TodoFooterFilter(rawValue: sender.tag)!
         model.filter = filter
         //updateButtonState()
         buttonDidTapCallback?(filter)
+    }
+    
+    func updateButtonState() {
+        for button in buttons {
+            button.isEnabled = model.filter.rawValue != button.tag
+        }
     }
 }
 
